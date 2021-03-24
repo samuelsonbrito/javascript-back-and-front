@@ -1,4 +1,3 @@
-const { json, request, response } = require('express');
 const express = require('express');
 const app = express();
 
@@ -38,6 +37,7 @@ app.put("/user/:id", (request, response) => {
     users.map((element) => {
         if (element.id == userId.id) {
             updateUser = element.name = user.name;
+            updateUser = element.email = user.email;
             return updateUser;
         }
     });
