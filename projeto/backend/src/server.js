@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 app.use(express.json());
+app.use(cors());
 
 const pacientes = [];
 
@@ -12,7 +14,7 @@ app.post("/paciente", (request, response) => {
         let paciente = request.body;
 
         let novoPaciente = {
-            id: paciente.id,
+            id: Math.random(),
             nome: paciente.nome,
             email: paciente.email,
             teste_covid: paciente.teste_covid,
@@ -59,6 +61,8 @@ app.put("/paciente/:id", (request, response) => {
 
             updatePaciente = element.nome = paciente.nome;
             updatePaciente = element.email = paciente.email;
+            updatePaciente = element.teste_covid = paciente.teste_covid;
+            updatePaciente = element.tomou_vacina = paciente.tomou_vacina;
 
             return updatePaciente;
         }
