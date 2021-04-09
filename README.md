@@ -11,5 +11,5 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Features
 
-- [ ] API REST - Backend
-- [ ] Interface com VueJS - Frontend
+- [x] API REST - Backend
+- [x] Interface com VueJS - Frontend
